@@ -1,0 +1,61 @@
+hotel_id,hotel_type,city,area,price_per_night_npr,rating,has_wifi,has_breakfast
+1,Guesthouse,Kathmandu,Lazimpat,847,3.6,True,True
+2,Boutique Hotel,Kathmandu,Thamel,5675,4.3,True,True
+3,Mid-Range Hotel,Kathmandu,Durbarmarg,2757,3.8,True,True
+4,Mid-Range Hotel,Kathmandu,Thamel,2636,3.6,True,True
+5,Boutique Hotel,Kathmandu,Boudha,4636,4.2,True,True
+6,Mid-Range Hotel,Kathmandu,Durbarmarg,3259,4.4,True,True
+7,Mid-Range Hotel,Kathmandu,Baluwatar,1702,3.9,True,False
+8,Mid-Range Hotel,Kathmandu,Lazimpat,1697,3.9,True,True
+9,Budget Hostel,Kathmandu,Boudha,625,3.8,True,True
+10,Budget Hostel,Kathmandu,Lazimpat,750,4.0,True,True
+11,Guesthouse,Kathmandu,Lazimpat,1371,3.4,True,True
+12,Guesthouse,Kathmandu,Lazimpat,1110,3.5,True,False
+13,Mid-Range Hotel,Kathmandu,Thamel,3549,4.5,False,True
+14,Guesthouse,Kathmandu,Thamel,732,3.6,True,False
+15,Guesthouse,Kathmandu,Thamel,1419,4.1,True,True
+16,Boutique Hotel,Kathmandu,Boudha,6183,4.1,True,True
+17,Budget Hostel,Kathmandu,Lazimpat,493,3.8,True,True
+18,Luxury Hotel,Kathmandu,Thamel,10493,4.7,True,True
+19,Guesthouse,Kathmandu,Thamel,1139,3.8,True,True
+20,Mid-Range Hotel,Kathmandu,Durbarmarg,2062,4.4,True,True
+21,Mid-Range Hotel,Kathmandu,Baluwatar,2459,4.4,True,True
+22,Boutique Hotel,Kathmandu,Thamel,3016,4.8,True,True
+23,Guesthouse,Kathmandu,Baluwatar,1244,4.2,True,True
+24,Boutique Hotel,Kathmandu,Baluwatar,4139,4.2,True,False
+25,Mid-Range Hotel,Kathmandu,Lazimpat,3316,3.9,True,False
+26,Budget Hostel,Kathmandu,Lazimpat,587,3.8,True,True
+27,Mid-Range Hotel,Kathmandu,Lazimpat,2284,4.3,True,True
+28,Boutique Hotel,Kathmandu,Lazimpat,5806,4.3,True,True
+29,Budget Hostel,Kathmandu,Thamel,335,4.0,True,True
+30,Luxury Hotel,Kathmandu,Baluwatar,12002,4.7,True,True
+31,Boutique Hotel,Patan,Jawalakhel,7146,4.4,True,True
+32,Boutique Hotel,Patan,Jawalakhel,4715,4.0,True,True
+33,Mid-Range Hotel,Patan,Pulchowk,3095,3.7,True,True
+34,Budget Hostel,Patan,Pulchowk,649,3.6,True,True
+35,Homestay,Patan,Pulchowk,505,4.1,True,True
+36,Mid-Range Hotel,Patan,Kupondole,2869,3.5,False,False
+37,Boutique Hotel,Patan,Patan Dhoka,4664,4.1,True,True
+38,Mid-Range Hotel,Patan,Pulchowk,1987,4.4,True,True
+39,Boutique Hotel,Patan,Patan Dhoka,5294,4.0,True,True
+40,Budget Hostel,Patan,Patan Dhoka,761,3.1,True,True
+41,Homestay,Patan,Patan Dhoka,603,3.8,True,False
+42,Mid-Range Hotel,Patan,Jawalakhel,3257,4.1,True,False
+43,Guesthouse,Patan,Pulchowk,722,3.2,True,True
+44,Mid-Range Hotel,Patan,Patan Dhoka,2015,4.1,True,False
+45,Guesthouse,Patan,Pulchowk,974,4.1,True,True
+46,Budget Hostel,Bhaktapur,Durbar Square Area,478,4.0,True,False
+47,Boutique Hotel,Bhaktapur,Suryabinayak,7380,4.1,True,True
+48,Budget Hostel,Bhaktapur,Suryabinayak,514,3.1,True,False
+49,Budget Hostel,Bhaktapur,Pottery Square,414,3.3,True,True
+50,Boutique Hotel,Bhaktapur,Durbar Square Area,3728,4.6,True,True
+51,Luxury Hotel,Bhaktapur,Thimi,8786,5.0,True,True
+52,Luxury Hotel,Bhaktapur,Thimi,12806,5.0,True,True
+53,Luxury Hotel,Bhaktapur,Durbar Square Area,8914,4.6,True,True
+54,Guesthouse,Bhaktapur,Pottery Square,896,4.2,True,True
+55,Guesthouse,Bhaktapur,Thimi,764,3.6,False,False
+56,Boutique Hotel,Bhaktapur,Suryabinayak,3143,4.4,True,True
+57,Boutique Hotel,Bhaktapur,Thimi,6636,4.6,True,True
+58,Mid-Range Hotel,Bhaktapur,Suryabinayak,3945,4.0,True,False
+59,Mid-Range Hotel,Bhaktapur,Pottery Square,2250,3.6,True,True
+60,Budget Hostel,Bhaktapur,Suryabinayak,473,3.8,True,False

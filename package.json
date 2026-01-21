@@ -1,0 +1,23 @@
+{
+  "name": "tourist-analytics-dashboard",
+  "version": "1.0.0",
+  "description": "Advanced analytics dashboard for Kathmandu Valley tourism data - promoting local vendors",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["tourism", "analytics", "kathmandu", "dashboard"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "cors": "^2.8.5",
+    "csv-parse": "^6.1.0",
+    "express": "^5.2.1",
+    "lodash": "^4.17.21",
+    "ml-kmeans": "^7.0.0",
+    "simple-statistics": "^7.8.8"
+  }
+}
