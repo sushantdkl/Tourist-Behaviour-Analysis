@@ -4,7 +4,10 @@ const { parse } = require('csv-parse/sync');
 
 class DataLoader {
     constructor() {
-        this.dataDir = path.join(__dirname);
+        // Use process.cwd() for Vercel compatibility
+        this.dataDir = process.env.VERCEL 
+            ? path.join(process.cwd(), 'src', 'data')
+            : path.join(__dirname);
         this.tourists = null;
         this.attractions = null;
         this.accommodations = null;
@@ -13,6 +16,7 @@ class DataLoader {
 
     loadCSV(filename) {
         const filePath = path.join(this.dataDir, filename);
+        console.log(`Loading CSV from: ${filePath}`);
         const content = fs.readFileSync(filePath, 'utf-8');
         return parse(content, {
             columns: true,
