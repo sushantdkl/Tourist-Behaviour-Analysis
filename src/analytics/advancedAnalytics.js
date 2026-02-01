@@ -1,12 +1,23 @@
 const ss = require('simple-statistics');
-const kmeans = require('ml-kmeans');
 const _ = require('lodash');
+
+// Cache for dynamic import
+let kmeansModule = null;
+
+async function getKmeans() {
+    if (!kmeansModule) {
+        kmeansModule = await import('ml-kmeans');
+    }
+    return kmeansModule.default || kmeansModule;
+}
 
 class AdvancedAnalytics {
     constructor() {}
 
     // =========== CLUSTERING ANALYSIS ===========
-    performCustomerSegmentation(tourists) {
+    async performCustomerSegmentation(tourists) {
+        const kmeans = await getKmeans();
+        
         // Prepare features for clustering: spending, duration, satisfaction
         const features = tourists.map(t => [
             t.total_spent_npr / 1000,  // Normalize spending
@@ -17,7 +28,7 @@ class AdvancedAnalytics {
 
         // Perform K-means clustering with 4 segments
         const k = 4;
-        const result = kmeans.kmeans(features, k, { maxIterations: 100 });
+        const result = kmeans.kmeans ? kmeans.kmeans(features, k, { maxIterations: 100 }) : kmeans(features, k, { maxIterations: 100 });
         
         // Assign clusters to tourists
         const clusteredTourists = tourists.map((t, i) => ({

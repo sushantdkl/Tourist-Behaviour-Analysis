@@ -67,10 +67,14 @@ router.get('/spending-breakdown', (req, res) => {
 });
 
 // =========== ADVANCED ANALYTICS ENDPOINTS ===========
-router.get('/clustering', (req, res) => {
-    const { tourists } = getData();
-    const clusterAnalysis = advancedAnalytics.performCustomerSegmentation(tourists);
-    res.json(clusterAnalysis);
+router.get('/clustering', async (req, res) => {
+    try {
+        const { tourists } = getData();
+        const clusterAnalysis = await advancedAnalytics.performCustomerSegmentation(tourists);
+        res.json(clusterAnalysis);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
 });
 
 router.get('/cohort', (req, res) => {
