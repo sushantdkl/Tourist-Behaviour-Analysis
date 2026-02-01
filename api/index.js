@@ -8,13 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Import routes
-const apiRoutes = require('../src/routes/api');
-app.use('/api', apiRoutes);
-
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// Import routes - mount at root since vercel routes /api/* to this handler
+const apiRoutes = require('../src/routes/api');
+app.use('/', apiRoutes);
 
 module.exports = app;
