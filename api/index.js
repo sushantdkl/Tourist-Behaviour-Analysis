@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Debug endpoint to check paths
-app.get('/api/debug', (req, res) => {
+app.get('/debug', (req, res) => {
     const paths = {
         __dirname: __dirname,
         cwd: process.cwd(),
@@ -27,16 +27,16 @@ app.get('/api/debug', (req, res) => {
 });
 
 // Health check
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
     res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-// Import routes
+// Import routes - mount at root since vercel routes /api/* to this handler
 try {
     const apiRoutes = require('../src/routes/api');
-    app.use('/api', apiRoutes);
+    app.use('/', apiRoutes);
 } catch (err) {
-    app.use('/api', (req, res) => {
+    app.use('/', (req, res) => {
         res.status(500).json({ 
             error: 'Failed to load routes', 
             message: err.message,
@@ -45,5 +45,4 @@ try {
     });
 }
 
-// Export for Vercel serverless
 module.exports = app;
