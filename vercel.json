@@ -5,7 +5,7 @@
       "src": "api/index.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": ["src/**"]
+        "includeFiles": ["src/data/*.csv", "src/data/*.js", "src/routes/*.js", "src/analytics/*.js"]
       }
     },
     {
