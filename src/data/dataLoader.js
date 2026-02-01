@@ -4,14 +4,36 @@ const { parse } = require('csv-parse/sync');
 
 class DataLoader {
     constructor() {
-        // Use process.cwd() for Vercel compatibility
-        this.dataDir = process.env.VERCEL 
-            ? path.join(process.cwd(), 'src', 'data')
-            : path.join(__dirname);
+        // Try multiple paths for Vercel compatibility
+        this.dataDir = this.findDataDir();
         this.tourists = null;
         this.attractions = null;
         this.accommodations = null;
         this.visits = null;
+    }
+
+    findDataDir() {
+        const possiblePaths = [
+            path.join(__dirname),
+            path.join(process.cwd(), 'src', 'data'),
+            path.join(process.cwd(), 'src/data'),
+            path.resolve('./src/data')
+        ];
+        
+        for (const p of possiblePaths) {
+            try {
+                if (fs.existsSync(path.join(p, 'kathmandu_valley_tourists.csv'))) {
+                    console.log(`Found data directory at: ${p}`);
+                    return p;
+                }
+            } catch (e) {
+                // continue to next path
+            }
+        }
+        
+        // Default fallback
+        console.log(`Using default __dirname: ${__dirname}`);
+        return __dirname;
     }
 
     loadCSV(filename) {
