@@ -19,6 +19,20 @@ function getData() {
 router.get('/overview', (req, res) => {
     const { tourists, attractions, accommodations, visits } = getData();
     
+    // Get transport distribution
+    const transportCounts = _.countBy(tourists, 'primary_transport');
+    const transportDistribution = Object.entries(transportCounts).map(([transport_mode, count]) => ({
+        transport_mode,
+        count
+    })).sort((a, b) => b.count - a.count);
+
+    // Get top attractions from visits
+    const attractionCounts = _.countBy(visits, 'attraction_name');
+    const topAttractions = Object.entries(attractionCounts).map(([name, visitCount]) => ({
+        name,
+        visits: visitCount
+    })).sort((a, b) => b.visits - a.visits).slice(0, 15);
+
     const overview = {
         totalTourists: tourists.length,
         totalAttractions: attractions.length,
@@ -33,7 +47,9 @@ router.get('/overview', (req, res) => {
         topNationalities: getTopN(tourists.map(t => t.nationality), 10),
         seasonDistribution: getDistribution(tourists, 'season'),
         purposeDistribution: getDistribution(tourists, 'travel_purpose'),
-        accommodationDistribution: getDistribution(tourists, 'accommodation_type')
+        accommodationDistribution: getDistribution(tourists, 'accommodation_type'),
+        transportDistribution: transportDistribution,
+        topAttractions: topAttractions
     };
     
     res.json(overview);
