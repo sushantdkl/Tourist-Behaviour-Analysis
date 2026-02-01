@@ -25,7 +25,13 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Something went wrong!' });
 });
 
-app.listen(PORT, () => {
-    console.log(`🚀 Tourist Analytics Dashboard running at http://localhost:${PORT}`);
-    console.log(`📊 API endpoints available at http://localhost:${PORT}/api`);
-});
+// Only listen when not in Vercel environment
+if (process.env.VERCEL !== '1') {
+    app.listen(PORT, () => {
+        console.log(`🚀 Tourist Analytics Dashboard running at http://localhost:${PORT}`);
+        console.log(`📊 API endpoints available at http://localhost:${PORT}/api`);
+    });
+}
+
+// Export for Vercel
+module.exports = app;
